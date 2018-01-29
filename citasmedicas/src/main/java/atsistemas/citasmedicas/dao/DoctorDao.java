@@ -34,26 +34,8 @@ public interface DoctorDao extends PagingAndSortingRepository <Doctor, String> {
 	
 	@Query(value= "SELECT d.name,COUNT(DISTINCT cit.paciente.id) as u FROM Doctor d, Consulta con, Cita cit WHERE "
 			+ "d.id=con.doctor.id AND con.id=cit.consulta.id GROUP BY d.id ORDER BY u DESC") 
-//	public List<Doctor> findTopNByDoctorsWithMorePatients(@Param(value = "num") Integer num , Sort sort);
+//	public List<Doctor> findTopNByDoctorsWithMorePatients(@Param(value = "num") Integer num );
 //	public List<Doctor> topdoctors();
 	public Page<Doctor> topdoctors(Pageable pageable);
 	
-	
-	
-//	public List<Doctor> findAll(@Param(value = "page") String page, @Param(value = "size") String size);
-	
-//	public List<Doctor> findbyName (@Param(value = "name") String name);
-	
-//	public Doctor findbyEmail (@Param(value = "email") String email);
-	
-	/*
-	//Recupera el usuario si alguno de sus libros que contengan title
-	//select user.*
-	//from user inner join book (book.idUser = user.id)
-	//where idUser = ? and book.title like * %?% */
-	
-//	@Query (value = "select u from User as u INNER JOIN u.books as b where b.title like:title and u.id like:idUser")
-//	List <User> findUserBooksLike(Integer idUser, String title);
-	
-
 }

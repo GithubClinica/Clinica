@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import atsistemas.citasmedicas.dao.DoctorDao;
-import atsistemas.citasmedicas.dto.ConsultaDTO;
 import atsistemas.citasmedicas.dto.DoctorDTO;
 import atsistemas.citasmedicas.model.Doctor;
 import atsistemas.citasmedicas.service.Consulta.ConsultaService;

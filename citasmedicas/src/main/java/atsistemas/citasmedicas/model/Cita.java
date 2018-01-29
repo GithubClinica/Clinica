@@ -43,7 +43,6 @@ public class Cita implements Serializable {
 	@DateTimeFormat(pattern = "yyyy/mm/dd")
 	private Date diacita;
 
-//	@Mapping ("pacienteId") 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Paciente paciente;
 

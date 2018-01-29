@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import atsistemas.citasmedicas.dto.CitaDTO;
 import atsistemas.citasmedicas.dto.PacienteDTO;
-import atsistemas.citasmedicas.service.cita.CitaService;
 import atsistemas.citasmedicas.service.paciente.PacienteService;
 
 @RestController
@@ -24,8 +23,7 @@ public class PacienteController {
 		@Autowired
 		private PacienteService pacienteservice;
 		
-		@Autowired
-		private CitaService citaService;
+
 		
 		private static final Logger log = LoggerFactory.getLogger(PacienteController.class);
 

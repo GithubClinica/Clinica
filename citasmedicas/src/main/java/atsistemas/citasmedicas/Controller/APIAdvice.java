@@ -15,11 +15,12 @@ import org.springframework.http.HttpStatus;
 @ControllerAdvice(/*annotations = RestController,*/ basePackages = "atsistemas.citasmedicas.Controller")
 public class APIAdvice {
 
-	/*
+/*	
 	@ExceptionHandler(NotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ErrorDTO notFound(NotFoundException e) {
-//		return new ErrorDTO(e.getCode(), e.getMessage());
-	}*/
+	return new ErrorDTO(e.getCode(), e.getMessage());
+
+*/
 	
 }

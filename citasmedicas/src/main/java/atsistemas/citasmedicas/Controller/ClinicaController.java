@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import atsistemas.citasmedicas.dto.ClinicaDTO;
 import atsistemas.citasmedicas.dto.SalaDTO;
 import atsistemas.citasmedicas.service.Clinica.ClinicaService;
-import atsistemas.citasmedicas.service.Sala.SalaService;
 
 @RestController
 @RequestMapping(value = "/api/clinica")
@@ -24,8 +23,6 @@ public class ClinicaController {
 	@Autowired
 	private ClinicaService clinicaservice;
 	
-	@Autowired
-	private SalaService salaService;
 	
 	private static final Logger log = LoggerFactory.getLogger(ClinicaController.class);
 

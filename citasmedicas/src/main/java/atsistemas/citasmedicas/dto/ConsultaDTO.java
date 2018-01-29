@@ -85,6 +85,6 @@ public class ConsultaDTO implements Serializable {
 	}
 
 	public void setCitas(List<Cita> citas) {
-		citas = citas;
+		this.citas = citas;
 	}
 }

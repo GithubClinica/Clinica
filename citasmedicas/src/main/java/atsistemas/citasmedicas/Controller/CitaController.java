@@ -27,34 +27,31 @@ public class CitaController {
 	@RequestMapping(method = { RequestMethod.GET })
 	public List<CitaDTO> findAll(@RequestParam(required = false, defaultValue="0") Integer page,
 			@RequestParam(required = false, defaultValue="10") Integer size) {
-		// log.debug("Buscando todos los citaes en el sistema");
+		 log.debug("Buscando todos los citaes en el sistema");
 		return citaService.findAll(page, size);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	public CitaDTO findOneById(@PathVariable Integer id) {
-		// log.debug(String.format("Buscando un cita con id %s", id));
+		 log.debug(String.format("Buscando un cita con id %s", id));
 		return citaService.findById(id);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public CitaDTO create(@RequestBody CitaDTO cita) {
-		// log.debug(String.format("Se crear el cita siguiente: %s", cita));
+		 log.debug(String.format("Se crear el cita siguiente: %s", cita));
 		return citaService.create(cita);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{id}")
 	public void update(@PathVariable Integer id, @RequestBody CitaDTO cita) {
-	//Mirar que en el Update sea RequestParam para obtener el id de la URL
-//	public void update(@RequestParam Integer id, @RequestBody CitaDTO cita) {
-
-//		log.debug(String.format("Vamos a modificar el libro: %s", book));
+		log.debug(String.format("Vamos a modificar el libro: %s", id));
 		citaService.update(cita,id);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
 	public void delete(@PathVariable Integer id) {
-//		log.debug(String.format("Vamos a borrar la cita con id %s", id));
+		log.debug(String.format("Vamos a borrar la cita con id %s", id));
 		citaService.delete(id);
 	}
 

@@ -3,7 +3,6 @@ package atsistemas.citasmedicas.service.Sala;
 import java.util.List;
 
 import atsistemas.citasmedicas.dto.SalaDTO;
-import atsistemas.citasmedicas.model.Doctor;
 import atsistemas.citasmedicas.model.Sala;
 
 public interface SalaService {
@@ -62,7 +61,7 @@ public interface SalaService {
 	/**
 	 * Borra un Sala
 	 * 
-	 * @param id
+	 * @param Integer
 	 */
 	void delete(Integer id);
 

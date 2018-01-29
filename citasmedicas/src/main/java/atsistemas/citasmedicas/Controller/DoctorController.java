@@ -85,7 +85,6 @@ public class DoctorController {
 		return doctorservice.findConsultations(id);
 	}
 */
-	
 	@RequestMapping(method = RequestMethod.GET, value = "/search")
 	public List<Doctor> findByCriteria(DoctorDTO doctorQueryParams) {
 		List<Doctor> doctors = doctorservice.findByCriteria(doctorQueryParams);
@@ -121,10 +120,6 @@ public class DoctorController {
 	return doctorservice.totalprice(id, initdate, finishdate);
 	}
 	
-
-
-
-
 
 
 }

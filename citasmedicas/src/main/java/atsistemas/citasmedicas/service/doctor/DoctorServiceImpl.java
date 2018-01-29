@@ -26,10 +26,7 @@ public class DoctorServiceImpl extends ServiceBaseImpl implements DoctorService 
 
 	@Autowired
 	private DozerBeanMapper dozer;
-/*	
-	@Autowired
-	private ConsultaDao consultaDao;		
-*/	
+
 	@Autowired
 	private RestTemplate restTemplate;
 	
@@ -109,22 +106,7 @@ public class DoctorServiceImpl extends ServiceBaseImpl implements DoctorService 
 		return doctorDao.findByCriteria(name, id);		
 	}
 	
-/*
-==================================================================================================(non-Javadoc)
-ESTA BIEN SOLO PROBAR OTRA COSA AHORA
-	@Override
-	public void InsertApidoctor(DoctorDTO[] template) {
-		// Voy recorriendo todos los doctores recuperados, como en la pagina principal no tengo acceso al precio,
-		// con su id consigo el acceso y guardo ese doctor en mi DB para la algoritmia
-		for (int i=0; i<template.length; i++) {
-			DoctorDTO aux = template[i];
-			String id = aux.getId();
-			DoctorDTO aux2 = restTemplate.getForObject("http://doctor.dbgjerez.es:8080/api/doctor/{id}", DoctorDTO.class, id);
-			create(aux2);
-			}
-	}
-===============================================================================
-*/
+
 	@Override
 	public void InsertApidoctor(DoctorDTO[] template) {
 	

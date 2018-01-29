@@ -12,7 +12,9 @@ public interface CitaService {
 	/**
 	 * Realiza la busqueda de todos los Citas existentes
 	 * 
-	 * @return listado de citas
+	 *  @param Integer, Integer
+	 *  
+	 * @return List<CitaDTO>
 	 */
 	List<CitaDTO> findAll(Integer page, Integer size);
 
@@ -20,25 +22,25 @@ public interface CitaService {
 	 * Transforma un cita en un citaDTO
 	 * 
 	 * @param Cita
-	 * @return
+	 * @return CitaDTO
 	 */
 	CitaDTO transform(Cita cita);
 
 
 	/**
-	 * Transforma un doctoDTO en un cita
+	 * Transforma un CitaDTO en un cita
 	 * 
-	 * @param cita
-	 * @return
+	 * @param CitaDTO
+	 * @return Cita
 	 */
 	Cita transform(CitaDTO cita);
 
 
 	/**
-	 * Busca por id
+	 * Busca una cita por id
 	 * 
-	 * @param id
-	 * @return
+	 * @param Integer
+	 * @return CitaDTO
 	 */
 
 	CitaDTO findById(Integer id);
@@ -46,22 +48,22 @@ public interface CitaService {
 	/**
 	 * Crea un cita
 	 * 
-	 * @param cita
-	 * @return
+	 * @param CitaDTO
+	 * @return CitaDTO
 	 */
 	CitaDTO create(CitaDTO cita);
 
 	/**
 	 * Modifica un cita
 	 * 
-	 * @param cita
+	 * @param CitaDTO, Integer
 	 */
 	void update(CitaDTO cita, Integer idCita);
 
 	/**
 	 * Borra un Cita
 	 * 
-	 * @param id
+	 * @param Integer
 	 */
 	void delete(Integer id);
 	
@@ -71,7 +73,5 @@ public interface CitaService {
 	 * @param Cita, Cita 
 	 */
 	void modify(Cita old, Cita act);
-	
-//	public Cita DTOaCita (CitaDTO cita) throws NotFoundException;
 
 }

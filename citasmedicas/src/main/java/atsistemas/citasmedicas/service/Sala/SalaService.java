@@ -11,15 +11,17 @@ public interface SalaService {
 	/**
 	 * Realiza la busqueda de todos las salas existentes
 	 * 
-	 * @return listado de salas
+	 * @param Integer, Integer
+	 * 
+	 * @return List<SalaDTO>
 	 */
 	List<SalaDTO> findAll(Integer page, Integer size);
 
 	/**
-	 * Transforma una Sala en una SalaDTO
+	 * Transforma una Sala a SalaDTO
 	 * 
-	 * @param Objeto Sala
-	 * @return
+	 * @param Sala
+	 * @return SalaDTO
 	 */
 	SalaDTO transform(Sala sala);
 
@@ -27,16 +29,16 @@ public interface SalaService {
 	/**
 	 * Transforma un doctoDTO en un sala
 	 * 
-	 * @param sala
-	 * @return
+	 * @param SalaDTO
+	 * @return Sala
 	 */
 	Sala transform(SalaDTO sala);
 
 
 	/**
-	 * Busca por id
+	 * Busca por Sala por id
 	 * 
-	 * @param id
+	 * @param Integer
 	 * @return SalaDTO
 	 */
 
@@ -45,7 +47,7 @@ public interface SalaService {
 	/**
 	 * Crea un sala
 	 * 
-	 * @param SalaDTO
+	 * @param Sala
 	 * @return SalaDTO
 	 */
 	SalaDTO create(SalaDTO sala);

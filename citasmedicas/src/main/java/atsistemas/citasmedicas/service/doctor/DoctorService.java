@@ -18,7 +18,7 @@ public interface DoctorService {
 	/**
 	 * Realiza la busqueda de todos los Doctores existentes
 	 * 
-	 * @return listado de doctores
+	 * @return List<DoctorDTO>
 	 */
 	List<DoctorDTO> findAll(Integer page, Integer size);
 
@@ -26,7 +26,7 @@ public interface DoctorService {
 	 * Transforma un doctor en un doctorDTO
 	 * 
 	 * @param Doctor
-	 * @return
+	 * @returnDoctorDTO
 	 */
 	DoctorDTO transform(Doctor doctor);
 
@@ -34,8 +34,8 @@ public interface DoctorService {
 	/**
 	 * Transforma un doctoDTO en un doctor
 	 * 
-	 * @param doctor
-	 * @return
+	 * @param DoctorDTO
+	 * @return Doctor
 	 */
 	Doctor transform(DoctorDTO doctor);
 
@@ -43,7 +43,7 @@ public interface DoctorService {
 	/**
 	 * Busca por id
 	 * 
-	 * @param id
+	 * @param String
 	 * @return
 	 */
 
@@ -52,7 +52,7 @@ public interface DoctorService {
 	/**
 	 * Crea un doctor
 	 * 
-	 * @param doctor
+	 * @param DoctorDTO
 	 * @return DoctorDTO
 	 */
 	DoctorDTO create(DoctorDTO doctor);
@@ -60,14 +60,14 @@ public interface DoctorService {
 	/**
 	 * Modifica un doctor
 	 * 
-	 * @param doctor
+	 * @param DoctorDTO, String
 	 */
 	public void update(DoctorDTO doctorDTO, String idDoctor);
 
 	/**
 	 * Borra un Doctor
 	 * 
-	 * @param id
+	 * @param String
 	 */
 	void delete(String id);
 	
@@ -85,30 +85,14 @@ public interface DoctorService {
 	 * @return List<Doctor> 
 	 */
 	public List<Doctor> findByCriteria(DoctorDTO DoctorQueryParams);
-/*	
-	/**
-	 * Devuelve todas las consultas de un determinado doctor
-	 * 
-	 * @param String
-	 * 
-	 * @return List<ConsultaDTO> 
-	 
-	public List<ConsultaDTO> findConsultations(String id);
-*/	
+
 	/**
 	 * Inserta los doctores de la Api externa en mi DB
 	 * 
 	 * @param DoctorDTO[]
 	 */
 	public void InsertApidoctor(DoctorDTO[] template);
-/*
-	/**
-	 * Obtiene todos los doctores
-	 * 
-	 * @return DoctorDTO
-	 
-	public DoctorDTO[] ApiPages ();
-*/
+
 	/**
 	 * Devuelve el salario de un doctor
 	 * Consultas que ha ejercido por el precio de la consulta
@@ -119,14 +103,10 @@ public interface DoctorService {
 	public float totalprice(String id, Date initdate, Date finishdate);
 	
 	/**
-	 * Devuelve los doctores con mas pacientes
+	 * Devuelve los doctores con mas pacientes paginado a 5
 	 * 
-	 * @param List<Doctor>
-	 * @return num?
+	 * @param Page<Doctor>
 	 */
-//	public List<Doctor> findTopNByDoctorsWithMorePatients(Integer num);
-//	public List<Doctor> topDoctors(/*Integer num*/) ;
-//	public Page<Doctor> topDoctors(/*Integer num*/) ;
 	public Page<Doctor> topdoctors();
 
 

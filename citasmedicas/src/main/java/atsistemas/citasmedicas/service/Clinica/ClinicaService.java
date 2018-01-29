@@ -11,15 +11,16 @@ public interface ClinicaService {
 		/**
 		 * Realiza la busqueda de todos las clinicas existentes
 		 * 
-		 * @return listado de clinicas
+		 * @param Integer, Integer
+		 * @return List<SalaDTO>
 		 */
 		List<ClinicaDTO> findAll(Integer page, Integer size);
 
 		/**
 		 * Transforma una Clinica en una ClinicaDTO
 		 * 
-		 * @param Objeto Clinica
-		 * @return
+		 * @param Clinica
+		 * @return ClinicaDTO
 		 */
 		ClinicaDTO transform(Clinica clinica);
 
@@ -27,16 +28,16 @@ public interface ClinicaService {
 		/**
 		 * Transforma un doctoDTO en un clinica
 		 * 
-		 * @param clinica
-		 * @return
+		 * @param ClinicaDTO
+		 * @return Clinica
 		 */
 		Clinica transform(ClinicaDTO clinica);
 
 
 		/**
-		 * Busca por id
+		 * Busca una clínica por id
 		 * 
-		 * @param id
+		 * @param Integer
 		 * @return ClinicaDTO
 		 */
 
@@ -60,7 +61,7 @@ public interface ClinicaService {
 		/**
 		 * Borra un Clinica
 		 * 
-		 * @param id
+		 * @param Integer
 		 */
 		void delete(Integer id);
 
@@ -74,7 +75,7 @@ public interface ClinicaService {
 		/**
 		 * Obtiene las Salas a partir de una clinica
 		 * 
-		 * @param id
+		 * @param Integer
 		 * 
 		 * * @return List<SalaDTO>
 		 */

@@ -10,7 +10,7 @@ public interface ConsultaService {
 	/**
 	 * Realiza la busqueda de todos los Consultaes existentes
 	 * 
-	 * @return listado de consultaes
+	 * @return List<ConsultaDTO>
 	 */
 	List<ConsultaDTO> findAll(Integer page, Integer size);
 
@@ -18,7 +18,7 @@ public interface ConsultaService {
 	 * Transforma un consulta en un consultaDTO
 	 * 
 	 * @param Consulta
-	 * @return
+	 * @return ConsultaDTO
 	 */
 	ConsultaDTO transform(Consulta consulta);
 
@@ -26,15 +26,15 @@ public interface ConsultaService {
 	/**
 	 * Transforma un doctoDTO en un consulta
 	 * 
-	 * @param consulta
-	 * @return
+	 * @param ConsultaDTO
+	 * @return Consulta
 	 */
 	Consulta transform(ConsultaDTO consulta);
 
 	/**
 	 * Busca por id
 	 * 
-	 * @param id
+	 * @param Integer
 	 * @return
 	 */
 
@@ -43,32 +43,31 @@ public interface ConsultaService {
 	/**
 	 * Crea un consulta
 	 * 
-	 * @param consulta
-	 * @return
+	 * @param ConsultaDTO
+	 * @return ConsultaDTO
 	 */
 	ConsultaDTO create(ConsultaDTO consulta);
 	
 
 	/**
-	 * Modifica un consulta, id
+	 * Modifica un consulta
 	 * 
-	 * @param consulta
+	 * @param ConsultaDTO, Integer
 	 */
 	
-//	void update(ConsultaDTO consulta);
 	void update(ConsultaDTO consultaDTO, Integer idConsulta);
 
 	/**
 	 * Borra un Consulta
 	 * 
-	 * @param id
+	 * @param Integer
 	 */
 	void delete(Integer id);
 	
 	/**
 	 * Para el metodo update mete en el objeto de la base datos lo actualizado
 	 * 
-	 * @param old, act (de tipo Consulta)
+	 * @param Consulta, Consulta
 	 */
 	void modify(Consulta old, Consulta act);
 

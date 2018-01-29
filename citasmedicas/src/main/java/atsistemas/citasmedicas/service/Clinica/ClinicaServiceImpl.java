@@ -22,8 +22,7 @@ public class ClinicaServiceImpl implements ClinicaService {
 	
 	@Autowired
 	private SalaService salaService;
-	//Autowired de clinicaService
-	
+
 
 	@Override
 	public List<ClinicaDTO> findAll(Integer page, Integer size) {

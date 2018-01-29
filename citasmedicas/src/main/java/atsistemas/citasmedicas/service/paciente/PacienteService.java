@@ -9,14 +9,11 @@ import atsistemas.citasmedicas.model.Paciente;
 public interface PacienteService {
 	
 	
-//	Doctor map(MedicoDTO dto);
-	
-//	MedicoDTO map(Doctor medico);
-	
 	/**
 	 * Realiza la busqueda de todos los Pacientees existentes
 	 * 
-	 * @return listado de pacientees
+	 * @param Integer, Integer
+	 * @return List<PacienteDTO>
 	 */
 	List<PacienteDTO> findAll(Integer page, Integer size);
 
@@ -24,25 +21,25 @@ public interface PacienteService {
 	 * Transforma un paciente en un pacienteDTO
 	 * 
 	 * @param Paciente
-	 * @return
+	 * @return PacienteDTO
 	 */
 	PacienteDTO transform(Paciente paciente);
 
 
 	/**
-	 * Transforma un doctoDTO en un paciente
+	 * Transforma un pacienteDTO a paciente
 	 * 
-	 * @param paciente
-	 * @return
+	 * @param PacienteDTO
+	 * @return Paciente
 	 */
 	Paciente transform(PacienteDTO paciente);
 
 
 	/**
-	 * Busca por id
+	 * Busca un paciente por id
 	 * 
-	 * @param id
-	 * @return
+	 * @param Integer
+	 * @return PacienteDTO
 	 */
 
 	PacienteDTO findById(Integer id);
@@ -50,22 +47,22 @@ public interface PacienteService {
 	/**
 	 * Crea un paciente
 	 * 
-	 * @param paciente
-	 * @return
+	 * @param Paciente
+	 * @return PacienteDTO
 	 */
 	PacienteDTO create(PacienteDTO paciente);
 
 	/**
 	 * Modifica un paciente
 	 * 
-	 * @param paciente
+	 * @param PacienteDTO,  Integer
 	 */
 	void update(PacienteDTO paciente, Integer idPaciente);
 
 	/**
 	 * Borra un Paciente
 	 * 
-	 * @param id
+	 * @param Integer
 	 */
 	void delete(Integer id);
 	

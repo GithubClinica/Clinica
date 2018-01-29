@@ -105,8 +105,6 @@ public class CitaServiceImpl implements CitaService{
 /*
 		//Mismo que arriba pero reducido
 		c.setPaciente(pacienteService.transform(pacienteService.findById(dto.getPaciente())));
-
-		//Mismo que arriba pero reducido
 		c.setConsulta(consultaService.transform(consultaService.findById(dto.getConsulta())));
 */
 		
@@ -116,14 +114,12 @@ public class CitaServiceImpl implements CitaService{
 	@Override
 	public CitaDTO findById(Integer id) {
 		final Cita doc = citaDao.findOne(id);
-		return transform(doc);
-		
+		return transform(doc);	
 //		return Optional.ofNullable(findOne).orElseThrow(NotFoundException)
 	}
 
 	@Override
 	public CitaDTO create(CitaDTO citaDTO) {
-//		citaDTO.setPaciente(pacienteService.findById(paciente));
 		final Cita cita = transform(citaDTO);
 		return transform(citaDao.save(cita));
 	}
